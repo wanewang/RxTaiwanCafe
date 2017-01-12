@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2094B32D1E27992400CF47A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094B32C1E27992400CF47A4 /* AppDelegate.swift */; };
-		2094B32F1E27992400CF47A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094B32E1E27992400CF47A4 /* ViewController.swift */; };
-		2094B3321E27992400CF47A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2094B3301E27992400CF47A4 /* Main.storyboard */; };
 		2094B3341E27992400CF47A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2094B3331E27992400CF47A4 /* Assets.xcassets */; };
 		2094B3371E27992400CF47A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2094B3351E27992400CF47A4 /* LaunchScreen.storyboard */; };
 		2094B3421E27992400CF47A4 /* RxTaiwanCafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094B3411E27992400CF47A4 /* RxTaiwanCafeTests.swift */; };
+		20BAB1921E27D2EB00E794E5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1911E27D2EB00E794E5 /* Coordinator.swift */; };
+		20BAB1941E27D2FE00E794E5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1931E27D2FD00E794E5 /* AppCoordinator.swift */; };
+		20BAB1981E27D40500E794E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1961E27D40500E794E5 /* MapViewController.swift */; };
+		20BAB1991E27D40500E794E5 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BAB1971E27D40500E794E5 /* MapViewController.xib */; };
+		662704FEA526EEE032182593 /* Pods_RxTaiwanCafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0C204246CFF810ABBB1242 /* Pods_RxTaiwanCafe.framework */; };
+		A9FFFE40C8868D57F1E7EFF0 /* Pods_RxTaiwanCafeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FA8B1E82AF5283B375B6FC /* Pods_RxTaiwanCafeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +32,22 @@
 /* Begin PBXFileReference section */
 		2094B3291E27992400CF47A4 /* RxTaiwanCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTaiwanCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2094B32C1E27992400CF47A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2094B32E1E27992400CF47A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2094B3311E27992400CF47A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2094B3331E27992400CF47A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2094B3361E27992400CF47A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2094B3381E27992400CF47A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2094B33D1E27992400CF47A4 /* RxTaiwanCafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxTaiwanCafeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2094B3411E27992400CF47A4 /* RxTaiwanCafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTaiwanCafeTests.swift; sourceTree = "<group>"; };
 		2094B3431E27992400CF47A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20BAB1911E27D2EB00E794E5 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		20BAB1931E27D2FD00E794E5 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		20BAB1961E27D40500E794E5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		20BAB1971E27D40500E794E5 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		93C543E6F60D3B897A4B8444 /* Pods-RxTaiwanCafeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests.release.xcconfig"; sourceTree = "<group>"; };
+		C47BB00CFF53A5F6082CC765 /* Pods-RxTaiwanCafeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DF69BE5B4DB0A505D47C4B39 /* Pods-RxTaiwanCafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafe/Pods-RxTaiwanCafe.debug.xcconfig"; sourceTree = "<group>"; };
+		EA07BF3E38F0DDA76E09E9AE /* Pods-RxTaiwanCafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafe/Pods-RxTaiwanCafe.release.xcconfig"; sourceTree = "<group>"; };
+		ED0C204246CFF810ABBB1242 /* Pods_RxTaiwanCafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTaiwanCafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8FA8B1E82AF5283B375B6FC /* Pods_RxTaiwanCafeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTaiwanCafeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				662704FEA526EEE032182593 /* Pods_RxTaiwanCafe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FFFE40C8868D57F1E7EFF0 /* Pods_RxTaiwanCafeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +76,8 @@
 				2094B32B1E27992400CF47A4 /* RxTaiwanCafe */,
 				2094B3401E27992400CF47A4 /* RxTaiwanCafeTests */,
 				2094B32A1E27992400CF47A4 /* Products */,
+				77074179625918C04E14C536 /* Pods */,
+				B05559296561C770BABF43C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +93,9 @@
 		2094B32B1E27992400CF47A4 /* RxTaiwanCafe */ = {
 			isa = PBXGroup;
 			children = (
+				20BAB1951E27D3F400E794E5 /* App */,
+				20BAB18C1E27D29D00E794E5 /* Coordinator */,
 				2094B32C1E27992400CF47A4 /* AppDelegate.swift */,
-				2094B32E1E27992400CF47A4 /* ViewController.swift */,
-				2094B3301E27992400CF47A4 /* Main.storyboard */,
 				2094B3331E27992400CF47A4 /* Assets.xcassets */,
 				2094B3351E27992400CF47A4 /* LaunchScreen.storyboard */,
 				2094B3381E27992400CF47A4 /* Info.plist */,
@@ -96,6 +112,44 @@
 			path = RxTaiwanCafeTests;
 			sourceTree = "<group>";
 		};
+		20BAB18C1E27D29D00E794E5 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				20BAB1931E27D2FD00E794E5 /* AppCoordinator.swift */,
+				20BAB1911E27D2EB00E794E5 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		20BAB1951E27D3F400E794E5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				20BAB1961E27D40500E794E5 /* MapViewController.swift */,
+				20BAB1971E27D40500E794E5 /* MapViewController.xib */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		77074179625918C04E14C536 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF69BE5B4DB0A505D47C4B39 /* Pods-RxTaiwanCafe.debug.xcconfig */,
+				EA07BF3E38F0DDA76E09E9AE /* Pods-RxTaiwanCafe.release.xcconfig */,
+				C47BB00CFF53A5F6082CC765 /* Pods-RxTaiwanCafeTests.debug.xcconfig */,
+				93C543E6F60D3B897A4B8444 /* Pods-RxTaiwanCafeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B05559296561C770BABF43C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED0C204246CFF810ABBB1242 /* Pods_RxTaiwanCafe.framework */,
+				F8FA8B1E82AF5283B375B6FC /* Pods_RxTaiwanCafeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2094B3461E27992400CF47A4 /* Build configuration list for PBXNativeTarget "RxTaiwanCafe" */;
 			buildPhases = (
+				3AFF2CF1DF43F4E70D472A8D /* [CP] Check Pods Manifest.lock */,
 				2094B3251E27992400CF47A4 /* Sources */,
 				2094B3261E27992400CF47A4 /* Frameworks */,
 				2094B3271E27992400CF47A4 /* Resources */,
+				01D60FBB80DFB1544036CB6F /* [CP] Embed Pods Frameworks */,
+				1B8BEDE0DD75C9AF071FD698 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +177,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2094B3491E27992400CF47A4 /* Build configuration list for PBXNativeTarget "RxTaiwanCafeTests" */;
 			buildPhases = (
+				A5475366398462019D7DEF7F /* [CP] Check Pods Manifest.lock */,
 				2094B3391E27992400CF47A4 /* Sources */,
 				2094B33A1E27992400CF47A4 /* Frameworks */,
 				2094B33B1E27992400CF47A4 /* Resources */,
+				9924D3432E8CE5A44B298766 /* [CP] Embed Pods Frameworks */,
+				D944E368C95A81084B7107AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,8 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2094B3371E27992400CF47A4 /* LaunchScreen.storyboard in Resources */,
+				20BAB1991E27D40500E794E5 /* MapViewController.xib in Resources */,
 				2094B3341E27992400CF47A4 /* Assets.xcassets in Resources */,
-				2094B3321E27992400CF47A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,13 +254,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01D60FBB80DFB1544036CB6F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTaiwanCafe/Pods-RxTaiwanCafe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B8BEDE0DD75C9AF071FD698 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTaiwanCafe/Pods-RxTaiwanCafe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AFF2CF1DF43F4E70D472A8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9924D3432E8CE5A44B298766 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5475366398462019D7DEF7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D944E368C95A81084B7107AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2094B3251E27992400CF47A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2094B32F1E27992400CF47A4 /* ViewController.swift in Sources */,
+				20BAB1941E27D2FE00E794E5 /* AppCoordinator.swift in Sources */,
+				20BAB1921E27D2EB00E794E5 /* Coordinator.swift in Sources */,
 				2094B32D1E27992400CF47A4 /* AppDelegate.swift in Sources */,
+				20BAB1981E27D40500E794E5 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,14 +378,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2094B3301E27992400CF47A4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2094B3311E27992400CF47A4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2094B3351E27992400CF47A4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -335,10 +482,12 @@
 		};
 		2094B3471E27992400CF47A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF69BE5B4DB0A505D47C4B39 /* Pods-RxTaiwanCafe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RxTaiwanCafe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.wane.RxTaiwanCafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,10 +497,12 @@
 		};
 		2094B3481E27992400CF47A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA07BF3E38F0DDA76E09E9AE /* Pods-RxTaiwanCafe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RxTaiwanCafe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.wane.RxTaiwanCafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -361,6 +512,7 @@
 		};
 		2094B34A1E27992400CF47A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C47BB00CFF53A5F6082CC765 /* Pods-RxTaiwanCafeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -375,6 +527,7 @@
 		};
 		2094B34B1E27992400CF47A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93C543E6F60D3B897A4B8444 /* Pods-RxTaiwanCafeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -406,6 +559,7 @@
 				2094B3481E27992400CF47A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2094B3491E27992400CF47A4 /* Build configuration list for PBXNativeTarget "RxTaiwanCafeTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +568,7 @@
 				2094B34B1E27992400CF47A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
