@@ -13,8 +13,10 @@
 		2094B3421E27992400CF47A4 /* RxTaiwanCafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094B3411E27992400CF47A4 /* RxTaiwanCafeTests.swift */; };
 		20BAB1921E27D2EB00E794E5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1911E27D2EB00E794E5 /* Coordinator.swift */; };
 		20BAB1941E27D2FE00E794E5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1931E27D2FD00E794E5 /* AppCoordinator.swift */; };
-		20BAB1981E27D40500E794E5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1961E27D40500E794E5 /* MapViewController.swift */; };
-		20BAB1991E27D40500E794E5 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BAB1971E27D40500E794E5 /* MapViewController.xib */; };
+		20BAB1981E27D40500E794E5 /* CafeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1961E27D40500E794E5 /* CafeMapViewController.swift */; };
+		20BAB1991E27D40500E794E5 /* CafeMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BAB1971E27D40500E794E5 /* CafeMapViewController.xib */; };
+		20BAB19E1E27D84300E794E5 /* RxCLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB19D1E27D84300E794E5 /* RxCLLocationManager.swift */; };
+		20BAB1A21E27DDE500E794E5 /* CafeMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1A11E27DDE500E794E5 /* CafeMapViewModel.swift */; };
 		662704FEA526EEE032182593 /* Pods_RxTaiwanCafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0C204246CFF810ABBB1242 /* Pods_RxTaiwanCafe.framework */; };
 		A9FFFE40C8868D57F1E7EFF0 /* Pods_RxTaiwanCafeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FA8B1E82AF5283B375B6FC /* Pods_RxTaiwanCafeTests.framework */; };
 /* End PBXBuildFile section */
@@ -30,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200985DA1E27E62600E9190D /* Banqiao.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Banqiao.gpx; sourceTree = "<group>"; };
 		2094B3291E27992400CF47A4 /* RxTaiwanCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTaiwanCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2094B32C1E27992400CF47A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2094B3331E27992400CF47A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,8 +43,10 @@
 		2094B3431E27992400CF47A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20BAB1911E27D2EB00E794E5 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		20BAB1931E27D2FD00E794E5 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		20BAB1961E27D40500E794E5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		20BAB1971E27D40500E794E5 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		20BAB1961E27D40500E794E5 /* CafeMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeMapViewController.swift; sourceTree = "<group>"; };
+		20BAB1971E27D40500E794E5 /* CafeMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CafeMapViewController.xib; sourceTree = "<group>"; };
+		20BAB19D1E27D84300E794E5 /* RxCLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManager.swift; sourceTree = "<group>"; };
+		20BAB1A11E27DDE500E794E5 /* CafeMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeMapViewModel.swift; sourceTree = "<group>"; };
 		93C543E6F60D3B897A4B8444 /* Pods-RxTaiwanCafeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests.release.xcconfig"; sourceTree = "<group>"; };
 		C47BB00CFF53A5F6082CC765 /* Pods-RxTaiwanCafeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF69BE5B4DB0A505D47C4B39 /* Pods-RxTaiwanCafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafe/Pods-RxTaiwanCafe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,12 +98,14 @@
 		2094B32B1E27992400CF47A4 /* RxTaiwanCafe */ = {
 			isa = PBXGroup;
 			children = (
+				20BAB19C1E27D84300E794E5 /* RxExtensions */,
 				20BAB1951E27D3F400E794E5 /* App */,
 				20BAB18C1E27D29D00E794E5 /* Coordinator */,
 				2094B32C1E27992400CF47A4 /* AppDelegate.swift */,
 				2094B3331E27992400CF47A4 /* Assets.xcassets */,
 				2094B3351E27992400CF47A4 /* LaunchScreen.storyboard */,
 				2094B3381E27992400CF47A4 /* Info.plist */,
+				200985DA1E27E62600E9190D /* Banqiao.gpx */,
 			);
 			path = RxTaiwanCafe;
 			sourceTree = "<group>";
@@ -124,10 +131,19 @@
 		20BAB1951E27D3F400E794E5 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				20BAB1961E27D40500E794E5 /* MapViewController.swift */,
-				20BAB1971E27D40500E794E5 /* MapViewController.xib */,
+				20BAB1961E27D40500E794E5 /* CafeMapViewController.swift */,
+				20BAB1A11E27DDE500E794E5 /* CafeMapViewModel.swift */,
+				20BAB1971E27D40500E794E5 /* CafeMapViewController.xib */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		20BAB19C1E27D84300E794E5 /* RxExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				20BAB19D1E27D84300E794E5 /* RxCLLocationManager.swift */,
+			);
+			path = RxExtensions;
 			sourceTree = "<group>";
 		};
 		77074179625918C04E14C536 /* Pods */ = {
@@ -240,7 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2094B3371E27992400CF47A4 /* LaunchScreen.storyboard in Resources */,
-				20BAB1991E27D40500E794E5 /* MapViewController.xib in Resources */,
+				20BAB1991E27D40500E794E5 /* CafeMapViewController.xib in Resources */,
 				2094B3341E27992400CF47A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,9 +369,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				20BAB1941E27D2FE00E794E5 /* AppCoordinator.swift in Sources */,
+				20BAB19E1E27D84300E794E5 /* RxCLLocationManager.swift in Sources */,
 				20BAB1921E27D2EB00E794E5 /* Coordinator.swift in Sources */,
 				2094B32D1E27992400CF47A4 /* AppDelegate.swift in Sources */,
-				20BAB1981E27D40500E794E5 /* MapViewController.swift in Sources */,
+				20BAB1981E27D40500E794E5 /* CafeMapViewController.swift in Sources */,
+				20BAB1A21E27DDE500E794E5 /* CafeMapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

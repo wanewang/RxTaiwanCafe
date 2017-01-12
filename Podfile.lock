@@ -1,4 +1,5 @@
 PODS:
+  - PermissionScope (1.1.1)
   - RxCocoa (3.1.0):
     - RxSwift (~> 3.1)
   - RxMKMapView (3.0.0):
@@ -7,6 +8,7 @@ PODS:
   - RxSwift (3.1.0)
 
 DEPENDENCIES:
+  - PermissionScope
   - RxCocoa (~> 3.0)
   - RxMKMapView (from `git@github.com:jhihguan/RxMKMapView.git`)
   - RxSwift (~> 3.0)
@@ -21,10 +23,11 @@ CHECKOUT OPTIONS:
     :git: git@github.com:jhihguan/RxMKMapView.git
 
 SPEC CHECKSUMS:
+  PermissionScope: a30c16e015779ba27c97c124e7539e27b5829de2
   RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
   RxMKMapView: f8cc11dd545b30e681cb9461a5be8b1f2c26c8f3
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
 
-PODFILE CHECKSUM: 709e37fb75d2fd9ef1fa9d80e7aa12fff5dfaac4
+PODFILE CHECKSUM: '0291a86f03c6ed8f7098e76b08b0d1ce84e94ff7'
 
 COCOAPODS: 1.2.0.beta.3

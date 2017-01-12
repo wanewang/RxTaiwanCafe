@@ -20,6 +20,20 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>請勿同意</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>請勿同意</string>
+	<key>NSCameraUsageDescription</key>
+	<string>請勿同意</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>顯示附近咖啡廳</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>請勿同意</string>
+	<key>NSMotionUsageDescription</key>
+	<string>請勿同意</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>請勿同意</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

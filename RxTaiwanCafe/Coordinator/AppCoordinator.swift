@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class AppCoordinator: Coordinator {
     
@@ -17,7 +18,8 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let mapViewController = MapViewController.init()
+        let viewModel = CafeMapViewModel.init(depedency: (locationManager: CLLocationManager.init(), session: URLSession.shared))
+        let mapViewController = CafeMapViewController.init(viewModel)
         window.rootViewController = mapViewController
     }
     
