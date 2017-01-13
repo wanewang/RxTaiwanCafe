@@ -22,17 +22,18 @@ protocol CafeMapViewModelProtocol: class {
 class CafeMapViewModel: CafeMapViewModelProtocol {
     weak var coordinatorDelegate: CafeMapViewModelCoordinatorDelegate?
     let userLocation: Observable<CLLocationCoordinate2D>
-    private let locationManager: CLLocationManager
+    
     private let disposeBag = DisposeBag()
     
     
     init(
         depedency: (
             locationManager: CLLocationManager,
-            network: CafeNomadNetwork
-        )
+            defaults: UserDefaults,
+            cache: DiskCache?
+        ),
+        input: Observable<[CafeInformation]>
     ) {
-        locationManager = depedency.locationManager
         depedency.locationManager
             .rx.didChangeAuthorizationStatus
             .filter {
@@ -40,7 +41,7 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
             }.subscribe(onNext: { (_) in
                 depedency.locationManager.startUpdatingLocation()
             }).addDisposableTo(disposeBag)
-        userLocation = locationManager
+        userLocation = depedency.locationManager
             .rx.didUpdateLocations
             .map { (locations) -> CLLocationCoordinate2D in
                 guard let location = locations.first else {
@@ -49,8 +50,20 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
                 depedency.locationManager.stopUpdatingLocation()
                 return location.coordinate
             }
-        depedency.network
-            .getCafeList()
+        let localList = input.shareReplay(1)
+        localList
+            .filter { (cafeList) -> Bool in
+                return depedency.defaults.value(forKey: "network.date") as? Date == nil
+            }.subscribe(onNext: { (cafeList) in
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: cafeList.flatMap { try? $0.foundationJSON() }, options: .init(rawValue: 0))
+                    try depedency.cache?.save(data, to: "cafe.json")
+                    depedency.defaults.set(Date(), forKey: "network.date")
+                } catch {
+                    print(error)
+                }
+            }).addDisposableTo(disposeBag)
+        localList
             .subscribe(onNext: { (cafeList) in
                 print(cafeList.first)
                 print(cafeList.last)

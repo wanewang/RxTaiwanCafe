@@ -40,4 +40,20 @@ struct CafeInformation: MappableObject {
         latitude = try map.extract("latitude")
         longitude = try map.extract("longitude")
     }
+    
+    func sequence(_ map: Map) throws {
+        try id ~> map["id"]
+        try name ~> map["name"]
+        try city ~> map["city"]
+        try wifi ~> map["wifi"]
+        try seat ~> map["seat"]
+        try quiet ~> map["quiet"]
+        try tasty ~> map["tasty"]
+        try cheap ~> map["cheap"]
+        try music ~> map["music"]
+        try url ~> map["url"]
+        try address ~> map["address"]
+        try latitude ~> map["latitude"]
+        try longitude ~> map["longitude"]
+    }
 }
