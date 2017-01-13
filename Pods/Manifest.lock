@@ -1,4 +1,14 @@
 PODS:
+  - Genome (3.0.2):
+    - Genome/Default (= 3.0.2)
+  - Genome/Core (3.0.2):
+    - Genome/Packages
+  - Genome/Default (3.0.2):
+    - Genome/Core
+    - Genome/Foundation
+  - Genome/Foundation (3.0.2):
+    - Genome/Core
+  - Genome/Packages (3.0.2)
   - PermissionScope (1.1.1)
   - RxCocoa (3.1.0):
     - RxSwift (~> 3.1)
@@ -8,6 +18,7 @@ PODS:
   - RxSwift (3.1.0)
 
 DEPENDENCIES:
+  - Genome
   - PermissionScope
   - RxCocoa (~> 3.0)
   - RxMKMapView (from `git@github.com:jhihguan/RxMKMapView.git`)
@@ -23,11 +34,12 @@ CHECKOUT OPTIONS:
     :git: git@github.com:jhihguan/RxMKMapView.git
 
 SPEC CHECKSUMS:
+  Genome: 44584c1e971899a5a4b20ee87faee452a5f1ac1a
   PermissionScope: a30c16e015779ba27c97c124e7539e27b5829de2
   RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
   RxMKMapView: f8cc11dd545b30e681cb9461a5be8b1f2c26c8f3
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
 
-PODFILE CHECKSUM: '0291a86f03c6ed8f7098e76b08b0d1ce84e94ff7'
+PODFILE CHECKSUM: 2c2b6efe5e20e73fd54434f19424312a7c628840
 
 COCOAPODS: 1.2.0.beta.3

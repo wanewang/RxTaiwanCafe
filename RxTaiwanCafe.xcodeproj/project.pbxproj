@@ -17,6 +17,15 @@
 		20BAB1991E27D40500E794E5 /* CafeMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BAB1971E27D40500E794E5 /* CafeMapViewController.xib */; };
 		20BAB19E1E27D84300E794E5 /* RxCLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB19D1E27D84300E794E5 /* RxCLLocationManager.swift */; };
 		20BAB1A21E27DDE500E794E5 /* CafeMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1A11E27DDE500E794E5 /* CafeMapViewModel.swift */; };
+		20C9A6161E28CBBC004F05E5 /* DownloadDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A6141E28CBBC004F05E5 /* DownloadDataViewController.swift */; };
+		20C9A6171E28CBBC004F05E5 /* DownloadDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20C9A6151E28CBBC004F05E5 /* DownloadDataViewController.xib */; };
+		20C9A6191E28CBD4004F05E5 /* DownloadDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A6181E28CBD4004F05E5 /* DownloadDataViewModel.swift */; };
+		20C9A6231E2908A2004F05E5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A61F1E2908A2004F05E5 /* Network.swift */; };
+		20C9A6241E2908A2004F05E5 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A6201E2908A2004F05E5 /* NetworkRequest.swift */; };
+		20C9A6261E290A65004F05E5 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A6251E290A65004F05E5 /* NetworkProvider.swift */; };
+		20C9A6281E290AC9004F05E5 /* CafeNomadNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A6271E290AC9004F05E5 /* CafeNomadNetwork.swift */; };
+		20C9A62A1E290DDF004F05E5 /* RxGenome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A6291E290DDF004F05E5 /* RxGenome.swift */; };
+		20C9A62D1E290E88004F05E5 /* CafeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A62C1E290E88004F05E5 /* CafeInformation.swift */; };
 		662704FEA526EEE032182593 /* Pods_RxTaiwanCafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0C204246CFF810ABBB1242 /* Pods_RxTaiwanCafe.framework */; };
 		A9FFFE40C8868D57F1E7EFF0 /* Pods_RxTaiwanCafeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FA8B1E82AF5283B375B6FC /* Pods_RxTaiwanCafeTests.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +56,15 @@
 		20BAB1971E27D40500E794E5 /* CafeMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CafeMapViewController.xib; sourceTree = "<group>"; };
 		20BAB19D1E27D84300E794E5 /* RxCLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxCLLocationManager.swift; sourceTree = "<group>"; };
 		20BAB1A11E27DDE500E794E5 /* CafeMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeMapViewModel.swift; sourceTree = "<group>"; };
+		20C9A6141E28CBBC004F05E5 /* DownloadDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadDataViewController.swift; sourceTree = "<group>"; };
+		20C9A6151E28CBBC004F05E5 /* DownloadDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadDataViewController.xib; sourceTree = "<group>"; };
+		20C9A6181E28CBD4004F05E5 /* DownloadDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadDataViewModel.swift; sourceTree = "<group>"; };
+		20C9A61F1E2908A2004F05E5 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		20C9A6201E2908A2004F05E5 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		20C9A6251E290A65004F05E5 /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		20C9A6271E290AC9004F05E5 /* CafeNomadNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeNomadNetwork.swift; sourceTree = "<group>"; };
+		20C9A6291E290DDF004F05E5 /* RxGenome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxGenome.swift; sourceTree = "<group>"; };
+		20C9A62C1E290E88004F05E5 /* CafeInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeInformation.swift; sourceTree = "<group>"; };
 		93C543E6F60D3B897A4B8444 /* Pods-RxTaiwanCafeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests.release.xcconfig"; sourceTree = "<group>"; };
 		C47BB00CFF53A5F6082CC765 /* Pods-RxTaiwanCafeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF69BE5B4DB0A505D47C4B39 /* Pods-RxTaiwanCafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafe/Pods-RxTaiwanCafe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +119,8 @@
 				20BAB19C1E27D84300E794E5 /* RxExtensions */,
 				20BAB1951E27D3F400E794E5 /* App */,
 				20BAB18C1E27D29D00E794E5 /* Coordinator */,
+				20C9A61A1E2908A2004F05E5 /* Service */,
+				20C9A62B1E290E5D004F05E5 /* Model */,
 				2094B32C1E27992400CF47A4 /* AppDelegate.swift */,
 				2094B3331E27992400CF47A4 /* Assets.xcassets */,
 				2094B3351E27992400CF47A4 /* LaunchScreen.storyboard */,
@@ -134,6 +154,9 @@
 				20BAB1961E27D40500E794E5 /* CafeMapViewController.swift */,
 				20BAB1A11E27DDE500E794E5 /* CafeMapViewModel.swift */,
 				20BAB1971E27D40500E794E5 /* CafeMapViewController.xib */,
+				20C9A6141E28CBBC004F05E5 /* DownloadDataViewController.swift */,
+				20C9A6181E28CBD4004F05E5 /* DownloadDataViewModel.swift */,
+				20C9A6151E28CBBC004F05E5 /* DownloadDataViewController.xib */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -142,8 +165,44 @@
 			isa = PBXGroup;
 			children = (
 				20BAB19D1E27D84300E794E5 /* RxCLLocationManager.swift */,
+				20C9A6291E290DDF004F05E5 /* RxGenome.swift */,
 			);
 			path = RxExtensions;
+			sourceTree = "<group>";
+		};
+		20C9A61A1E2908A2004F05E5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				20C9A61B1E2908A2004F05E5 /* API */,
+				20C9A61E1E2908A2004F05E5 /* Network */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		20C9A61B1E2908A2004F05E5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				20C9A6271E290AC9004F05E5 /* CafeNomadNetwork.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		20C9A61E1E2908A2004F05E5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				20C9A61F1E2908A2004F05E5 /* Network.swift */,
+				20C9A6251E290A65004F05E5 /* NetworkProvider.swift */,
+				20C9A6201E2908A2004F05E5 /* NetworkRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		20C9A62B1E290E5D004F05E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20C9A62C1E290E88004F05E5 /* CafeInformation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		77074179625918C04E14C536 /* Pods */ = {
@@ -255,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C9A6171E28CBBC004F05E5 /* DownloadDataViewController.xib in Resources */,
 				2094B3371E27992400CF47A4 /* LaunchScreen.storyboard in Resources */,
 				20BAB1991E27D40500E794E5 /* CafeMapViewController.xib in Resources */,
 				2094B3341E27992400CF47A4 /* Assets.xcassets in Resources */,
@@ -371,8 +431,16 @@
 				20BAB1941E27D2FE00E794E5 /* AppCoordinator.swift in Sources */,
 				20BAB19E1E27D84300E794E5 /* RxCLLocationManager.swift in Sources */,
 				20BAB1921E27D2EB00E794E5 /* Coordinator.swift in Sources */,
+				20C9A6231E2908A2004F05E5 /* Network.swift in Sources */,
 				2094B32D1E27992400CF47A4 /* AppDelegate.swift in Sources */,
+				20C9A6191E28CBD4004F05E5 /* DownloadDataViewModel.swift in Sources */,
 				20BAB1981E27D40500E794E5 /* CafeMapViewController.swift in Sources */,
+				20C9A6261E290A65004F05E5 /* NetworkProvider.swift in Sources */,
+				20C9A62A1E290DDF004F05E5 /* RxGenome.swift in Sources */,
+				20C9A62D1E290E88004F05E5 /* CafeInformation.swift in Sources */,
+				20C9A6161E28CBBC004F05E5 /* DownloadDataViewController.swift in Sources */,
+				20C9A6281E290AC9004F05E5 /* CafeNomadNetwork.swift in Sources */,
+				20C9A6241E2908A2004F05E5 /* NetworkRequest.swift in Sources */,
 				20BAB1A21E27DDE500E794E5 /* CafeMapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

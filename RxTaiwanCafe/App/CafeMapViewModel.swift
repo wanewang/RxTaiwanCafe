@@ -29,7 +29,7 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
     init(
         depedency: (
             locationManager: CLLocationManager,
-            session: URLSession
+            network: CafeNomadNetwork
         )
     ) {
         locationManager = depedency.locationManager
@@ -49,6 +49,12 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
                 depedency.locationManager.stopUpdatingLocation()
                 return location.coordinate
             }
+        depedency.network
+            .getCafeList()
+            .subscribe(onNext: { (cafeList) in
+                print(cafeList.first)
+                print(cafeList.last)
+            }).addDisposableTo(disposeBag)
     }
     
 }

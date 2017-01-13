@@ -89,12 +89,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Genome/Genome.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PermissionScope/PermissionScope.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxCocoa/RxCocoa.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxMKMapView/RxMKMapView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwift/RxSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Genome/Genome.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PermissionScope/PermissionScope.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxCocoa/RxCocoa.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxMKMapView/RxMKMapView.framework"

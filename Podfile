@@ -6,6 +6,7 @@ target 'RxTaiwanCafe' do
   pod 'RxCocoa', '~> 3.0'
   pod 'RxMKMapView', :git => 'git@github.com:jhihguan/RxMKMapView.git'
   pod 'PermissionScope'
+  pod 'Genome'
 
   target 'RxTaiwanCafeTests' do
     inherit! :search_paths
