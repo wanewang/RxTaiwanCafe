@@ -16,13 +16,13 @@ class AppCoordinator: Coordinator {
     private let window: UIWindow
     private let network: CafeNomadNetwork
     private let cache: DiskCache?
-    private let defaults: UserDefaults
+    private let location: LocationFetcher
     
     init(_ window: UIWindow) {
         self.window = window
-        self.defaults = UserDefaults.standard
         self.network = CafeNomadNetwork(NetworkProvider.init(session: URLSession.shared))
         self.cache = DiskCache(FileManager.default)
+        self.location = LocationFetcher(CLLocationManager())
     }
     
     func start() {
@@ -36,8 +36,7 @@ class AppCoordinator: Coordinator {
             cacheInfos = network.getCafeList()
         }
         let viewModel = CafeMapViewModel(depedency: (
-            locationManager: CLLocationManager(),
-            defaults: defaults,
+            locationFetcher: location,
             cache: cache
             ), input: cacheInfos)
         let mapViewController = CafeMapViewController(viewModel)

@@ -27,6 +27,11 @@ class DiskCache {
         self.documentPath = documentPath
     }
     
+    func attributes(at filename: String) throws -> [FileAttributeKey: Any] {
+        let filePathString = documentPath.appendingPathComponent(filename).absoluteString
+        return try fileManager.attributesOfItem(atPath: filePathString)
+    }
+    
     func get(at filename: String) throws -> Data {
         let filePathString = documentPath.appendingPathComponent(filename).absoluteString
         guard let data = fileManager.contents(atPath: filePathString) else {
@@ -44,7 +49,7 @@ class DiskCache {
                 throw CacheError.remove(path: filePathString)
             }
         }
-        if !fileManager.createFile(atPath: filePathString, contents: data) {
+        if !fileManager.createFile(atPath: filePathString, contents: data, attributes: [FileAttributeKey.creationDate.rawValue: "\(Date())"]) {
             throw CacheError.create(path: filePathString)
         }
     }

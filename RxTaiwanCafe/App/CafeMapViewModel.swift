@@ -28,37 +28,20 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
     
     init(
         depedency: (
-            locationManager: CLLocationManager,
-            defaults: UserDefaults,
+            locationFetcher: LocationFetcher,
             cache: DiskCache?
         ),
         input: Observable<[CafeInformation]>
     ) {
-        depedency.locationManager
-            .rx.didChangeAuthorizationStatus
-            .filter {
-                $0 == .authorizedWhenInUse
-            }.subscribe(onNext: { (_) in
-                depedency.locationManager.startUpdatingLocation()
-            }).addDisposableTo(disposeBag)
-        userLocation = depedency.locationManager
-            .rx.didUpdateLocations
-            .map { (locations) -> CLLocationCoordinate2D in
-                guard let location = locations.first else {
-                    return CLLocationCoordinate2D.init()
-                }
-                depedency.locationManager.stopUpdatingLocation()
-                return location.coordinate
-            }
+        userLocation = depedency.locationFetcher.userLocation.shareReplay(1)
         let localList = input.shareReplay(1)
         localList
             .filter { (cafeList) -> Bool in
-                return depedency.defaults.value(forKey: "network.date") as? Date == nil
+                return try depedency.cache?.get(at: "cafe.json") == nil
             }.subscribe(onNext: { (cafeList) in
                 do {
                     let data = try JSONSerialization.data(withJSONObject: cafeList.flatMap { try? $0.foundationJSON() }, options: .init(rawValue: 0))
                     try depedency.cache?.save(data, to: "cafe.json")
-                    depedency.defaults.set(Date(), forKey: "network.date")
                 } catch {
                     print(error)
                 }

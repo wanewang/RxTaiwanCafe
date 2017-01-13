@@ -27,6 +27,7 @@
 		20C9A62A1E290DDF004F05E5 /* RxGenome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A6291E290DDF004F05E5 /* RxGenome.swift */; };
 		20C9A62D1E290E88004F05E5 /* CafeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A62C1E290E88004F05E5 /* CafeInformation.swift */; };
 		20C9A6301E2927ED004F05E5 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A62F1E2927ED004F05E5 /* DiskCache.swift */; };
+		20C9A6331E293A81004F05E5 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A6321E293A81004F05E5 /* LocationFetcher.swift */; };
 		662704FEA526EEE032182593 /* Pods_RxTaiwanCafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0C204246CFF810ABBB1242 /* Pods_RxTaiwanCafe.framework */; };
 		A9FFFE40C8868D57F1E7EFF0 /* Pods_RxTaiwanCafeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FA8B1E82AF5283B375B6FC /* Pods_RxTaiwanCafeTests.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		20C9A6291E290DDF004F05E5 /* RxGenome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxGenome.swift; sourceTree = "<group>"; };
 		20C9A62C1E290E88004F05E5 /* CafeInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeInformation.swift; sourceTree = "<group>"; };
 		20C9A62F1E2927ED004F05E5 /* DiskCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
+		20C9A6321E293A81004F05E5 /* LocationFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		93C543E6F60D3B897A4B8444 /* Pods-RxTaiwanCafeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests.release.xcconfig"; sourceTree = "<group>"; };
 		C47BB00CFF53A5F6082CC765 /* Pods-RxTaiwanCafeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF69BE5B4DB0A505D47C4B39 /* Pods-RxTaiwanCafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafe/Pods-RxTaiwanCafe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		20C9A61A1E2908A2004F05E5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				20C9A6311E293A75004F05E5 /* Location */,
 				20C9A62E1E2927E4004F05E5 /* Cache */,
 				20C9A61B1E2908A2004F05E5 /* API */,
 				20C9A61E1E2908A2004F05E5 /* Network */,
@@ -214,6 +217,14 @@
 				20C9A62F1E2927ED004F05E5 /* DiskCache.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		20C9A6311E293A75004F05E5 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				20C9A6321E293A81004F05E5 /* LocationFetcher.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		77074179625918C04E14C536 /* Pods */ = {
@@ -449,6 +460,7 @@
 				20C9A6261E290A65004F05E5 /* NetworkProvider.swift in Sources */,
 				20C9A62A1E290DDF004F05E5 /* RxGenome.swift in Sources */,
 				20C9A62D1E290E88004F05E5 /* CafeInformation.swift in Sources */,
+				20C9A6331E293A81004F05E5 /* LocationFetcher.swift in Sources */,
 				20C9A6161E28CBBC004F05E5 /* DownloadDataViewController.swift in Sources */,
 				20C9A6281E290AC9004F05E5 /* CafeNomadNetwork.swift in Sources */,
 				20C9A6241E2908A2004F05E5 /* NetworkRequest.swift in Sources */,
