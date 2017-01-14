@@ -17,11 +17,13 @@ protocol CafeMapViewModelCoordinatorDelegate: class {
 protocol CafeMapViewModelProtocol: class {
     weak var coordinatorDelegate: CafeMapViewModelCoordinatorDelegate? { get set }
     var userLocation: Observable<CLLocationCoordinate2D> { get }
+    var cafeInofs: Observable<[CafeAnnotationViewModel]> { get }
 }
 
 class CafeMapViewModel: CafeMapViewModelProtocol {
     weak var coordinatorDelegate: CafeMapViewModelCoordinatorDelegate?
     let userLocation: Observable<CLLocationCoordinate2D>
+    let cafeInofs: Observable<[CafeAnnotationViewModel]>
     
     private let disposeBag = DisposeBag()
     
@@ -33,8 +35,12 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
         ),
         input: Observable<[CafeInformation]>
     ) {
-        userLocation = depedency.locationFetcher.userLocation.shareReplay(1)
         let localList = input.shareReplay(1)
+        userLocation = depedency.locationFetcher.userLocation.shareReplay(1)
+        cafeInofs = localList
+            .map {
+                $0.flatMap(CafeAnnotationViewModel.init)
+            }
         localList
             .filter { (cafeList) -> Bool in
                 return try depedency.cache?.get(at: "cafe.json") == nil
@@ -45,11 +51,6 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
                 } catch {
                     print(error)
                 }
-            }).addDisposableTo(disposeBag)
-        localList
-            .subscribe(onNext: { (cafeList) in
-                print(cafeList.first)
-                print(cafeList.last)
             }).addDisposableTo(disposeBag)
     }
     

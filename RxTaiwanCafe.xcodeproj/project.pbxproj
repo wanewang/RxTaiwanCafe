@@ -28,6 +28,7 @@
 		20C9A62D1E290E88004F05E5 /* CafeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A62C1E290E88004F05E5 /* CafeInformation.swift */; };
 		20C9A6301E2927ED004F05E5 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A62F1E2927ED004F05E5 /* DiskCache.swift */; };
 		20C9A6331E293A81004F05E5 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C9A6321E293A81004F05E5 /* LocationFetcher.swift */; };
+		20E60CF61E29DEE600E34B72 /* CafeAnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E60CF51E29DEE600E34B72 /* CafeAnnotationViewModel.swift */; };
 		662704FEA526EEE032182593 /* Pods_RxTaiwanCafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED0C204246CFF810ABBB1242 /* Pods_RxTaiwanCafe.framework */; };
 		A9FFFE40C8868D57F1E7EFF0 /* Pods_RxTaiwanCafeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FA8B1E82AF5283B375B6FC /* Pods_RxTaiwanCafeTests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		20C9A62C1E290E88004F05E5 /* CafeInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeInformation.swift; sourceTree = "<group>"; };
 		20C9A62F1E2927ED004F05E5 /* DiskCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 		20C9A6321E293A81004F05E5 /* LocationFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		20E60CF51E29DEE600E34B72 /* CafeAnnotationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeAnnotationViewModel.swift; sourceTree = "<group>"; };
 		93C543E6F60D3B897A4B8444 /* Pods-RxTaiwanCafeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests.release.xcconfig"; sourceTree = "<group>"; };
 		C47BB00CFF53A5F6082CC765 /* Pods-RxTaiwanCafeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafeTests/Pods-RxTaiwanCafeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF69BE5B4DB0A505D47C4B39 /* Pods-RxTaiwanCafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTaiwanCafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTaiwanCafe/Pods-RxTaiwanCafe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				20BAB1961E27D40500E794E5 /* CafeMapViewController.swift */,
 				20BAB1A11E27DDE500E794E5 /* CafeMapViewModel.swift */,
+				20E60CF51E29DEE600E34B72 /* CafeAnnotationViewModel.swift */,
 				20BAB1971E27D40500E794E5 /* CafeMapViewController.xib */,
 				20C9A6141E28CBBC004F05E5 /* DownloadDataViewController.swift */,
 				20C9A6181E28CBD4004F05E5 /* DownloadDataViewModel.swift */,
@@ -450,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E60CF61E29DEE600E34B72 /* CafeAnnotationViewModel.swift in Sources */,
 				20BAB1941E27D2FE00E794E5 /* AppCoordinator.swift in Sources */,
 				20BAB19E1E27D84300E794E5 /* RxCLLocationManager.swift in Sources */,
 				20BAB1921E27D2EB00E794E5 /* Coordinator.swift in Sources */,

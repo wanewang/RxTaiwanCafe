@@ -44,8 +44,11 @@ class CafeMapViewController: UIViewController {
     }
     
     private func registerBinding() {
-        viewModel
-            .userLocation
+        viewModel.cafeInofs
+            .subscribe(onNext: { [weak self] (infos) in
+                self?.mapView.addAnnotations(infos)
+            }).addDisposableTo(disposeBag)
+        viewModel.userLocation
             .filter {
                 $0.latitude != 0 && $0.longitude != 0
             }.subscribe(onNext: { [weak self] (coordinate) in
