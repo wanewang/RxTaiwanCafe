@@ -12,7 +12,7 @@ import PermissionScope
 import RxSwift
 import RxMKMapView
 
-class CafeMapViewController: UIViewController {
+class CafeMapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     private lazy var pscope: PermissionScope = {
@@ -54,6 +54,31 @@ class CafeMapViewController: UIViewController {
             }.subscribe(onNext: { [weak self] (coordinate) in
                 self?.mapView.setRegion(MKCoordinateRegion.init(center: coordinate, span: MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
             }).addDisposableTo(disposeBag)
+        viewModel.infoDetail
+            .subscribe(onNext: { (infoViewModel) in
+                print(infoViewModel)
+            }).addDisposableTo(disposeBag)
+        mapView.rx.didSelectAnnotationView
+            .map { annotaion -> CafeAnnotationViewModel in
+                guard let data = annotaion.annotation as? CafeAnnotationViewModel else {
+                    throw DataError.none
+                }
+                return data
+            }.bindTo(viewModel.cafeDidSelect)
+            .addDisposableTo(disposeBag)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? CafeAnnotationViewModel else {
+            return nil
+        }
+        if let pin = mapView.dequeueReusableAnnotationView(withIdentifier: "reuseAnnotation") {
+            pin.annotation = annotation
+            return pin
+        }
+        let pin = MKPinAnnotationView.init(annotation: annotation, reuseIdentifier: "reuseAnnotation")
+        pin.canShowCallout = true
+        return pin
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,15 +86,4 @@ class CafeMapViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
