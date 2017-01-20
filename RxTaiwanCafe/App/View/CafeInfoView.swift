@@ -17,6 +17,11 @@ class CafeInfoView: LoadableView {
     @IBOutlet weak var quietLabel: UILabel!
     @IBOutlet weak var tastyLabel: UILabel!
     @IBOutlet weak var musicLabel: UILabel!
+    @IBOutlet weak var routeButton: UIButton! {
+        didSet {
+            routeButton.isHidden = true
+        }
+    }
     
     func config(_ vm: CafeInfoViewModel) {
         self.isHidden = false

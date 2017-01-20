@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import PermissionScope
 import RxSwift
+import RxCocoa
 import RxMKMapView
 
 class CafeMapViewController: UIViewController, MKMapViewDelegate {
@@ -45,14 +46,19 @@ class CafeMapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         pscope.show()
-        registerBinding()
+        bindViewModel()
+        bindViewAction()
     }
     
-    private func registerBinding() {
+    private func bindViewModel() {
         viewModel.cafeInofs
             .subscribe(onNext: { [weak self] (infos) in
                 self?.mapView.addAnnotations(infos)
             }).addDisposableTo(disposeBag)
+        viewModel.userLocation
+            .map { $0.latitude == 0 && $0.longitude == 0 }
+            .bindTo(cafeInfoView.routeButton.rx.isHidden)
+            .addDisposableTo(disposeBag)
         viewModel.userLocation
             .filter {
                 $0.latitude != 0 && $0.longitude != 0
@@ -63,6 +69,18 @@ class CafeMapViewController: UIViewController, MKMapViewDelegate {
             .subscribe(onNext: { [weak self] (infoViewModel) in
                 self?.cafeInfoView.config(infoViewModel)
             }).addDisposableTo(disposeBag)
+        viewModel.routes
+            .subscribe(onNext: { [weak self] (route) in
+                self?.mapView.overlays.forEach { (lay) in
+                    if lay is MKPolyline {
+                        self?.mapView.remove(lay)
+                    }
+                }
+                self?.mapView.add(route.polyline)
+            }).addDisposableTo(disposeBag)
+    }
+    
+    private func bindViewAction() {
         mapView.rx.didDeselectAnnotationView
             .map { _ in true }
             .bindTo(cafeInfoView.rx.isHidden)
@@ -74,6 +92,10 @@ class CafeMapViewController: UIViewController, MKMapViewDelegate {
                 }
                 return data
             }.bindTo(viewModel.cafeDidSelect)
+            .addDisposableTo(disposeBag)
+        cafeInfoView.routeButton
+            .rx.tap
+            .bindTo(viewModel.routeDidStart)
             .addDisposableTo(disposeBag)
     }
     
@@ -88,6 +110,15 @@ class CafeMapViewController: UIViewController, MKMapViewDelegate {
         let pin = MKPinAnnotationView.init(annotation: annotation, reuseIdentifier: "reuseAnnotation")
         pin.canShowCallout = true
         return pin
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+        if overlay is MKPolyline {
+            polylineRenderer.strokeColor = .darkGray
+            polylineRenderer.lineWidth = 5
+        }
+        return polylineRenderer
     }
 
     override func didReceiveMemoryWarning() {

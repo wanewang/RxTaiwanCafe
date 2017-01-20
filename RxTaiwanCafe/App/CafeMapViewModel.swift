@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import RxSwift
+import MapKit
 
 protocol CafeMapViewModelCoordinatorDelegate: class {
     
@@ -19,6 +20,8 @@ protocol CafeMapViewModelProtocol: class {
     var userLocation: Observable<CLLocationCoordinate2D> { get }
     var cafeInofs: Observable<[CafeAnnotationViewModel]> { get }
     var cafeDidSelect: PublishSubject<CafeAnnotationViewModel> { get }
+    var routeDidStart: PublishSubject<Void> { get }
+    var routes: Observable<MKRoute> { get }
     var infoDetail: Observable<CafeInfoViewModel> { get }
 }
 
@@ -27,8 +30,11 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
     weak var coordinatorDelegate: CafeMapViewModelCoordinatorDelegate?
     let userLocation: Observable<CLLocationCoordinate2D>
     let cafeInofs: Observable<[CafeAnnotationViewModel]>
+    let routes: Observable<MKRoute>
     let cafeDidSelect: PublishSubject<CafeAnnotationViewModel> = .init()
+    let routeDidStart: PublishSubject<Void> = .init()
     let infoDetail: Observable<CafeInfoViewModel>
+    
 
     private let disposeBag = DisposeBag()
     
@@ -55,6 +61,26 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
                 }
                 return info
             }.map(CafeInfoViewModel.init)
+        routes = routeDidStart
+            .withLatestFrom(infoDetail)
+            .map { $0.coordinate }
+            .withLatestFrom(userLocation) {
+                $0
+            }.flatMap { (point, userLocation) -> Observable<MKRoute> in
+                let directionRequest = MKDirectionsRequest.init()
+                directionRequest.transportType = .walking
+                directionRequest.source = MKMapItem.init(placemark: MKPlacemark.init(coordinate: userLocation, addressDictionary: nil))
+                directionRequest.destination = MKMapItem.init(placemark: MKPlacemark.init(coordinate: point, addressDictionary: nil))
+                let directions = MKDirections.init(request: directionRequest)
+                return Observable.create({ (observer) -> Disposable in
+                    directions.calculate { (directionsResponse, error) -> Void in
+                        if let route = directionsResponse?.routes.first {
+                            observer.onNext(route)
+                        }
+                    }
+                    return Disposables.create()
+                })
+            }
         localList
             .filter { (cafeList) -> Bool in
                 return try depedency.cache?.get(at: "cafe.json") == nil

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct CafeInfoViewModel {
     
@@ -19,7 +20,7 @@ struct CafeInfoViewModel {
     let cheap: Double
     let music: Double
     let url: String
-    let address: String
+    let coordinate: CLLocationCoordinate2D
     
     init(_ information: CafeInformation) {
         self.name = information.name
@@ -31,7 +32,7 @@ struct CafeInfoViewModel {
         self.cheap = information.cheap
         self.music = information.music
         self.url = information.url
-        self.address = information.address
+        self.coordinate = information.coordinate
     }
     
 }
