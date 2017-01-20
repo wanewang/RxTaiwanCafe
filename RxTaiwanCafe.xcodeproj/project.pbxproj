@@ -11,6 +11,9 @@
 		2094B3341E27992400CF47A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2094B3331E27992400CF47A4 /* Assets.xcassets */; };
 		2094B3371E27992400CF47A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2094B3351E27992400CF47A4 /* LaunchScreen.storyboard */; };
 		2094B3421E27992400CF47A4 /* RxTaiwanCafeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094B3411E27992400CF47A4 /* RxTaiwanCafeTests.swift */; };
+		20A1572F1E325A7800D414C2 /* CafeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A1572E1E325A7800D414C2 /* CafeInfoView.swift */; };
+		20A157311E325A8300D414C2 /* CafeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20A157301E325A8300D414C2 /* CafeInfoView.xib */; };
+		20A157331E325AD800D414C2 /* LoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A157321E325AD800D414C2 /* LoadableView.swift */; };
 		20BAB1921E27D2EB00E794E5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1911E27D2EB00E794E5 /* Coordinator.swift */; };
 		20BAB1941E27D2FE00E794E5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1931E27D2FD00E794E5 /* AppCoordinator.swift */; };
 		20BAB1981E27D40500E794E5 /* CafeMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BAB1961E27D40500E794E5 /* CafeMapViewController.swift */; };
@@ -55,6 +58,9 @@
 		2094B33D1E27992400CF47A4 /* RxTaiwanCafeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxTaiwanCafeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2094B3411E27992400CF47A4 /* RxTaiwanCafeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTaiwanCafeTests.swift; sourceTree = "<group>"; };
 		2094B3431E27992400CF47A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20A1572E1E325A7800D414C2 /* CafeInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeInfoView.swift; sourceTree = "<group>"; };
+		20A157301E325A8300D414C2 /* CafeInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CafeInfoView.xib; sourceTree = "<group>"; };
+		20A157321E325AD800D414C2 /* LoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableView.swift; sourceTree = "<group>"; };
 		20BAB1911E27D2EB00E794E5 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		20BAB1931E27D2FD00E794E5 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		20BAB1961E27D40500E794E5 /* CafeMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeMapViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +200,10 @@
 		20C17BAF1E30F83900179415 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				20A1572E1E325A7800D414C2 /* CafeInfoView.swift */,
+				20A157301E325A8300D414C2 /* CafeInfoView.xib */,
 				20C17BB01E30F90400179415 /* CafeInfoViewModel.swift */,
+				20A157321E325AD800D414C2 /* LoadableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +373,7 @@
 				20C9A6171E28CBBC004F05E5 /* DownloadDataViewController.xib in Resources */,
 				2094B3371E27992400CF47A4 /* LaunchScreen.storyboard in Resources */,
 				20BAB1991E27D40500E794E5 /* CafeMapViewController.xib in Resources */,
+				20A157311E325A8300D414C2 /* CafeInfoView.xib in Resources */,
 				2094B3341E27992400CF47A4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +497,7 @@
 				20BAB1981E27D40500E794E5 /* CafeMapViewController.swift in Sources */,
 				20C9A6261E290A65004F05E5 /* NetworkProvider.swift in Sources */,
 				20C9A62A1E290DDF004F05E5 /* RxGenome.swift in Sources */,
+				20A157331E325AD800D414C2 /* LoadableView.swift in Sources */,
 				20C9A62D1E290E88004F05E5 /* CafeInformation.swift in Sources */,
 				20C9A6331E293A81004F05E5 /* LocationFetcher.swift in Sources */,
 				20C9A6161E28CBBC004F05E5 /* DownloadDataViewController.swift in Sources */,
@@ -494,6 +505,7 @@
 				20C9A6241E2908A2004F05E5 /* NetworkRequest.swift in Sources */,
 				20BAB1A21E27DDE500E794E5 /* CafeMapViewModel.swift in Sources */,
 				20C9A6301E2927ED004F05E5 /* DiskCache.swift in Sources */,
+				20A1572F1E325A7800D414C2 /* CafeInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

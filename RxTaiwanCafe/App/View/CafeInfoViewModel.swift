@@ -12,12 +12,12 @@ struct CafeInfoViewModel {
     
     let name: String
     let city: String
-    let wifi: Int
-    let seat: Int
-    let quiet: Int
-    let tasty: Int
-    let cheap: Int
-    let music: Int
+    let wifi: Double
+    let seat: Double
+    let quiet: Double
+    let tasty: Double
+    let cheap: Double
+    let music: Double
     let url: String
     let address: String
     

@@ -15,6 +15,11 @@ import RxMKMapView
 class CafeMapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var cafeInfoView: CafeInfoView! {
+        didSet {
+            cafeInfoView.isHidden = true
+        }
+    }
     private lazy var pscope: PermissionScope = {
         let pscope = PermissionScope()
         pscope.headerLabel.text = "嗨!"
@@ -55,9 +60,13 @@ class CafeMapViewController: UIViewController, MKMapViewDelegate {
                 self?.mapView.setRegion(MKCoordinateRegion.init(center: coordinate, span: MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
             }).addDisposableTo(disposeBag)
         viewModel.infoDetail
-            .subscribe(onNext: { (infoViewModel) in
-                print(infoViewModel)
+            .subscribe(onNext: { [weak self] (infoViewModel) in
+                self?.cafeInfoView.config(infoViewModel)
             }).addDisposableTo(disposeBag)
+        mapView.rx.didDeselectAnnotationView
+            .map { _ in true }
+            .bindTo(cafeInfoView.rx.isHidden)
+            .addDisposableTo(disposeBag)
         mapView.rx.didSelectAnnotationView
             .map { annotaion -> CafeAnnotationViewModel in
                 guard let data = annotaion.annotation as? CafeAnnotationViewModel else {

@@ -8,22 +8,23 @@
 
 import Foundation
 import Genome
+import CoreLocation
 
 struct CafeInformation: MappableObject {
     let id: String
     let name: String
     let city: String
-    let wifi: Int
-    let seat: Int
-    let quiet: Int
-    let tasty: Int
-    let cheap: Int
-    let music: Int
+    let wifi: Double
+    let seat: Double
+    let quiet: Double
+    let tasty: Double
+    let cheap: Double
+    let music: Double
     let url: String
     let address: String
     let latitude: String
     let longitude: String
-    
+    let coordinate: CLLocationCoordinate2D
     
     init(map: Map) throws {
         id = try map.extract("id")
@@ -39,6 +40,11 @@ struct CafeInformation: MappableObject {
         address = try map.extract("address")
         latitude = try map.extract("latitude")
         longitude = try map.extract("longitude")
+        guard let lat = Double(latitude),
+            let lng = Double(longitude) else {
+                throw DataError.location
+        }
+        coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
     }
     
     func sequence(_ map: Map) throws {

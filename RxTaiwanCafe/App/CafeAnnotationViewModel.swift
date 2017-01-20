@@ -14,6 +14,7 @@ class CafeAnnotationViewModel: NSObject, MKAnnotation {
     private let name: String
     private let address: String
     private let location: CLLocationCoordinate2D
+    let rate: Double
     
     var title: String? {
         return name
@@ -25,13 +26,10 @@ class CafeAnnotationViewModel: NSObject, MKAnnotation {
         return location
     }
     
-    init?(_ cafeInfo: CafeInformation) {
-        guard let lat = Double(cafeInfo.latitude),
-            let lng = Double(cafeInfo.longitude) else {
-            return nil
-        }
+    init(_ cafeInfo: CafeInformation) {
         name = cafeInfo.name
         address = cafeInfo.address
-        location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        location = cafeInfo.coordinate
+        rate = (cafeInfo.wifi + cafeInfo.seat + cafeInfo.quiet + cafeInfo.tasty + cafeInfo.cheap + cafeInfo.music) / 6.0
     }
 }
