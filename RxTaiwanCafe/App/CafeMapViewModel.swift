@@ -21,6 +21,7 @@ protocol CafeMapViewModelProtocol: class {
     var cafeInofs: Observable<[CafeAnnotationViewModel]> { get }
     var cafeDidSelect: PublishSubject<CafeAnnotationViewModel> { get }
     var routeDidStart: PublishSubject<Void> { get }
+    var locationRestart: PublishSubject<Void> { get }
     var routes: Observable<MKRoute> { get }
     var infoDetail: Observable<CafeInfoViewModel> { get }
 }
@@ -33,6 +34,7 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
     let routes: Observable<MKRoute>
     let cafeDidSelect: PublishSubject<CafeAnnotationViewModel> = .init()
     let routeDidStart: PublishSubject<Void> = .init()
+    let locationRestart: PublishSubject<Void> = .init()
     let infoDetail: Observable<CafeInfoViewModel>
     
 
@@ -81,6 +83,9 @@ class CafeMapViewModel: CafeMapViewModelProtocol {
                     return Disposables.create()
                 })
             }
+        locationRestart
+            .bindTo(depedency.locationFetcher.locationStartUpdate)
+            .addDisposableTo(disposeBag)
         localList
             .filter { (cafeList) -> Bool in
                 return try depedency.cache?.get(at: "cafe.json") == nil

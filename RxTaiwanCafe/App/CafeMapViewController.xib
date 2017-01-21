@@ -12,7 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CafeMapViewController" customModule="RxTaiwanCafe" customModuleProvider="target">
             <connections>
                 <outlet property="cafeInfoView" destination="hoK-mx-AHa" id="RgR-g1-zEk"/>
+                <outlet property="locationButton" destination="Qcc-Rx-bp3" id="Of6-KT-4TG"/>
                 <outlet property="mapView" destination="HE8-b5-xGK" id="MfZ-aA-XYO"/>
+                <outlet property="searchButton" destination="1us-8q-DOx" id="5uf-QO-nBl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,18 +36,42 @@
                         <constraint firstAttribute="height" constant="90" id="t8G-C6-xI4"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcc-Rx-bp3">
+                    <rect key="frame" x="16" y="619" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="KBa-9o-u88"/>
+                        <constraint firstAttribute="width" constant="32" id="Npb-nY-xDy"/>
+                    </constraints>
+                    <state key="normal" image="location"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1us-8q-DOx">
+                    <rect key="frame" x="16" y="571" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="57s-GZ-F0r"/>
+                        <constraint firstAttribute="width" constant="32" id="Fkl-AI-M5O"/>
+                    </constraints>
+                    <state key="normal" image="search"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="HE8-b5-xGK" secondAttribute="bottom" id="8zo-aB-Pd1"/>
                 <constraint firstItem="hoK-mx-AHa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="AVX-f9-ONf"/>
+                <constraint firstItem="Qcc-Rx-bp3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="AkR-3C-kNf"/>
                 <constraint firstItem="HE8-b5-xGK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ays-CU-2kw"/>
                 <constraint firstItem="HE8-b5-xGK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="B5S-eT-eft"/>
+                <constraint firstItem="Qcc-Rx-bp3" firstAttribute="top" secondItem="1us-8q-DOx" secondAttribute="bottom" constant="16" id="DPX-Ka-z3i"/>
+                <constraint firstAttribute="bottom" secondItem="Qcc-Rx-bp3" secondAttribute="bottom" constant="16" id="Juv-qg-JuO"/>
                 <constraint firstAttribute="trailing" secondItem="hoK-mx-AHa" secondAttribute="trailing" constant="16" id="VTs-Vc-ghY"/>
                 <constraint firstAttribute="trailing" secondItem="HE8-b5-xGK" secondAttribute="trailing" id="c55-PQ-tYl"/>
                 <constraint firstItem="hoK-mx-AHa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="htZ-rU-uzl"/>
+                <constraint firstItem="1us-8q-DOx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="kgB-uU-PkP"/>
             </constraints>
             <point key="canvasLocation" x="93.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="location" width="48" height="48"/>
+        <image name="search" width="48" height="48"/>
+    </resources>
 </document>

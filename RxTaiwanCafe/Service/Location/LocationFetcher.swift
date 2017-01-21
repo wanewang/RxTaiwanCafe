@@ -11,12 +11,11 @@ import CoreLocation
 import RxSwift
 
 class LocationFetcher {
-    private let locationManager: CLLocationManager
     let userLocation: Observable<CLLocationCoordinate2D>
+    let locationStartUpdate: PublishSubject<Void> = .init()
     private let disposeBag = DisposeBag()
     
     init(_ locationManager: CLLocationManager) {
-        self.locationManager = locationManager
         locationManager
             .rx.didChangeAuthorizationStatus
             .filter {
@@ -33,11 +32,10 @@ class LocationFetcher {
                 locationManager.stopUpdatingLocation()
                 return location.coordinate
         }
+        locationStartUpdate
+            .subscribe(onNext: { (_) in
+                locationManager.startUpdatingLocation()
+            }).addDisposableTo(disposeBag)
     }
-    
-    func restart() {
-        locationManager.startUpdatingLocation()
-    }
-    
     
 }

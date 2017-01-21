@@ -15,6 +15,12 @@ import RxMKMapView
 
 class CafeMapViewController: UIViewController, MKMapViewDelegate {
     
+    @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton! {
+        didSet {
+            searchButton.isHidden = true
+        }
+    }
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var cafeInfoView: CafeInfoView! {
         didSet {
@@ -96,6 +102,10 @@ class CafeMapViewController: UIViewController, MKMapViewDelegate {
         cafeInfoView.routeButton
             .rx.tap
             .bindTo(viewModel.routeDidStart)
+            .addDisposableTo(disposeBag)
+        locationButton
+            .rx.tap
+            .bindTo(viewModel.locationRestart)
             .addDisposableTo(disposeBag)
     }
     
