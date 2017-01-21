@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CafeMapViewController" customModule="RxTaiwanCafe" customModuleProvider="target">
             <connections>
                 <outlet property="cafeInfoView" destination="hoK-mx-AHa" id="RgR-g1-zEk"/>
+                <outlet property="cafeInfoViewTopConstraint" destination="htZ-rU-uzl" id="iph-YP-BpZ"/>
                 <outlet property="locationButton" destination="Qcc-Rx-bp3" id="Of6-KT-4TG"/>
                 <outlet property="mapView" destination="HE8-b5-xGK" id="MfZ-aA-XYO"/>
                 <outlet property="searchButton" destination="1us-8q-DOx" id="5uf-QO-nBl"/>
@@ -51,6 +52,7 @@
                         <constraint firstAttribute="width" constant="32" id="Fkl-AI-M5O"/>
                     </constraints>
                     <state key="normal" image="search"/>
+                    <state key="selected" image="close"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,6 +73,7 @@
         </view>
     </objects>
     <resources>
+        <image name="close" width="48" height="48"/>
         <image name="location" width="48" height="48"/>
         <image name="search" width="48" height="48"/>
     </resources>

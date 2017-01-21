@@ -16,17 +16,14 @@ import RxMKMapView
 class CafeMapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var locationButton: UIButton!
-    @IBOutlet weak var searchButton: UIButton! {
-        didSet {
-            searchButton.isHidden = true
-        }
-    }
+    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var cafeInfoView: CafeInfoView! {
         didSet {
             cafeInfoView.isHidden = true
         }
     }
+    @IBOutlet weak var cafeInfoViewTopConstraint: NSLayoutConstraint!
     private lazy var pscope: PermissionScope = {
         let pscope = PermissionScope()
         pscope.headerLabel.text = "嗨!"
@@ -107,6 +104,24 @@ class CafeMapViewController: UIViewController, MKMapViewDelegate {
             .rx.tap
             .bindTo(viewModel.locationRestart)
             .addDisposableTo(disposeBag)
+        let searchStatus = searchButton
+            .rx.tap
+            .scan(false) { (oldValue, newValue) in
+                !oldValue
+            }.shareReplay(1)
+        searchStatus
+            .bindTo(searchButton.rx.isSelected)
+            .addDisposableTo(disposeBag)
+        searchStatus
+            .observeOn(MainScheduler.instance)
+            .map { status -> CGFloat in
+                status ? 150 : 20
+            }.subscribe(onNext: { [weak self] (value) in
+                self?.cafeInfoViewTopConstraint.constant = value
+                UIView.animate(withDuration: 0.5, animations: {
+                    self?.view.layoutIfNeeded()
+                })
+            }).addDisposableTo(disposeBag)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
